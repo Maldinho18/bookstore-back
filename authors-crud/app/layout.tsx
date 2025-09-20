@@ -1,8 +1,7 @@
-// app/layout.tsx
-import "./globals.css";
+import "./globals.css"
 
 export const metadata = {
-  title: "Authors CRUD",
+  title: "CRUD de autores",
   description: "Preparcial Next.js",
 };
 

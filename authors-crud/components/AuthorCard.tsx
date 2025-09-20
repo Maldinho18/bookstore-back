@@ -23,9 +23,7 @@ export default function AuthorCard({author, onDelete}: { author: Author; onDelet
                       if (!confirmed) return;
 
                       const response = await deleteAuthor(author.id);
-                      if (response.ok) {
-                        useAuthorsStore.getState().remove(author.id);
-                      } else if (response.status === 412) {
+                      if (response.status === 412) {
                         useAuthorsStore.setState({
                           authors: useAuthorsStore.getState().authors.filter(a => a.id !== author.id),
                         });
