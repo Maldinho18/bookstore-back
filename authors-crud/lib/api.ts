@@ -34,7 +34,6 @@ export async function updateAuthor(id: number, payload: AuthorUpdate): Promise<A
     return response.json();
 }
 
-// lib/api.ts
 export async function deleteAuthor(id: number): Promise<{ ok: boolean; status: number; message?: string }> {
   const res = await fetch(`${API}/${id}`, { method: "DELETE" });
   if (res.status === 204) return { ok: true, status: 204 };
@@ -43,5 +42,5 @@ export async function deleteAuthor(id: number): Promise<{ ok: boolean; status: n
     try { msg = await res.text(); } catch {}
     return { ok: false, status: res.status, message: msg || res.statusText };
   }
-  return { ok: true, status: res.status };
+    return { ok: true, status: res.status };
 }
