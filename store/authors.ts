@@ -4,7 +4,7 @@ import { Author, AuthorCreate, AuthorUpdate } from "../types/author";
 import { create } from "zustand";
 import { getAuthors, createAuthor, updateAuthor, deleteAuthor } from "../lib/api";
 
-type AuthorState = {
+type AuthorsState = {
     authors: Author[];
     loading: boolean;
     fetchAll: () => Promise<void>;
@@ -13,7 +13,7 @@ type AuthorState = {
     remove: (id: number) => Promise<void>;
 };
 
-export const useAuthorStore = create<AuthorState> ((set, get) => ({
+export const useAuthorsStore = create<AuthorsState> ((set, get) => ({
     authors: [],
     loading: false,
 
